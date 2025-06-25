@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Calculator App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header with Tab Navigation -->
+        <header class="app-header">
+            <nav class="tab-navigation">
+                <button class="tab-btn active" data-tab="basic">Basic</button>
+                <button class="tab-btn" data-tab="scientific">Scientific</button>
+                <button class="tab-btn" data-tab="graphing">Graphing</button>
+                <button class="tab-btn" data-tab="conversion">Conversion</button>
+            </nav>
+        </header>
+
+        <!-- Calculator Content Areas -->
+        <main class="calculator-container">
+            <!-- Basic Calculator -->
+            <section class="calculator-panel active" id="basic-calculator">
+                <div class="calc-display">
+                    <div class="display-screen">
+                        <div class="display-history"></div>
+                        <div class="display-current">0</div>
+                    </div>
+                </div>
+                <div class="calc-buttons">
+                    <div class="button-grid basic-grid">
+                        <button class="calc-btn clear">C</button>
+                        <button class="calc-btn clear">±</button>
+                        <button class="calc-btn clear">%</button>
+                        <button class="calc-btn operator">÷</button>
+                        
+                        <button class="calc-btn number">7</button>
+                        <button class="calc-btn number">8</button>
+                        <button class="calc-btn number">9</button>
+                        <button class="calc-btn operator">×</button>
+                        
+                        <button class="calc-btn number">4</button>
+                        <button class="calc-btn number">5</button>
+                        <button class="calc-btn number">6</button>
+                        <button class="calc-btn operator">-</button>
+                        
+                        <button class="calc-btn number">1</button>
+                        <button class="calc-btn number">2</button>
+                        <button class="calc-btn number">3</button>
+                        <button class="calc-btn operator">+</button>
+                        
+                        <button class="calc-btn number zero">0</button>
+                        <button class="calc-btn number">.</button>
+                        <button class="calc-btn equals">=</button>
+                    </div>
+                </div>
+                <div class="calc-history">
+                    <h3>History</h3>
+                    <div class="history-list"></div>
+                    <button class="clear-history">Clear History</button>
+                </div>
+            </section>
+
+            <!-- Scientific Calculator -->
+            <section class="calculator-panel" id="scientific-calculator">
+                <div class="calc-display">
+                    <div class="display-screen">
+                        <div class="display-history"></div>
+                        <div class="display-current">0</div>
+                    </div>
+                </div>
+                <div class="scientific-controls">
+                    <div class="mode-toggle">
+                        <button class="mode-btn active" data-mode="deg">DEG</button>
+                        <button class="mode-btn" data-mode="rad">RAD</button>
+                    </div>
+                    <div class="memory-display">
+                        <span class="memory-indicator">M</span>
+                    </div>
+                </div>
+                <div class="calc-buttons">
+                    <div class="button-grid scientific-grid">
+                        <!-- Row 1 -->
+                        <button class="calc-btn function">2nd</button>
+                        <button class="calc-btn function">π</button>
+                        <button class="calc-btn function">e</button>
+                        <button class="calc-btn clear">C</button>
+                        <button class="calc-btn clear">⌫</button>
+                        
+                        <!-- Row 2 -->
+                        <button class="calc-btn function">x²</button>
+                        <button class="calc-btn function">1/x</button>
+                        <button class="calc-btn function">|x|</button>
+                        <button class="calc-btn function">exp</button>
+                        <button class="calc-btn function">mod</button>
+                        
+                        <!-- Row 3 -->
+                        <button class="calc-btn function">√</button>
+                        <button class="calc-btn function">(</button>
+                        <button class="calc-btn function">)</button>
+                        <button class="calc-btn function">n!</button>
+                        <button class="calc-btn operator">÷</button>
+                        
+                        <!-- Row 4 -->
+                        <button class="calc-btn function">xʸ</button>
+                        <button class="calc-btn number">7</button>
+                        <button class="calc-btn number">8</button>
+                        <button class="calc-btn number">9</button>
+                        <button class="calc-btn operator">×</button>
+                        
+                        <!-- Row 5 -->
+                        <button class="calc-btn function">10ˣ</button>
+                        <button class="calc-btn number">4</button>
+                        <button class="calc-btn number">5</button>
+                        <button class="calc-btn number">6</button>
+                        <button class="calc-btn operator">-</button>
+                        
+                        <!-- Row 6 -->
+                        <button class="calc-btn function">log</button>
+                        <button class="calc-btn number">1</button>
+                        <button class="calc-btn number">2</button>
+                        <button class="calc-btn number">3</button>
+                        <button class="calc-btn operator">+</button>
+                        
+                        <!-- Row 7 -->
+                        <button class="calc-btn function">ln</button>
+                        <button class="calc-btn function">±</button>
+                        <button class="calc-btn number zero">0</button>
+                        <button class="calc-btn number">.</button>
+                        <button class="calc-btn equals">=</button>
+                        
+                        <!-- Row 8 - Trig functions -->
+                        <button class="calc-btn function">sin</button>
+                        <button class="calc-btn function">cos</button>
+                        <button class="calc-btn function">tan</button>
+                        <button class="calc-btn memory">MC</button>
+                        <button class="calc-btn memory">MR</button>
+                        
+                        <!-- Row 9 - Memory functions -->
+                        <button class="calc-btn function">sin⁻¹</button>
+                        <button class="calc-btn function">cos⁻¹</button>
+                        <button class="calc-btn function">tan⁻¹</button>
+                        <button class="calc-btn memory">M+</button>
+                        <button class="calc-btn memory">M-</button>
+                    </div>
+                </div>
+                <div class="calc-history">
+                    <h3>History</h3>
+                    <div class="history-list"></div>
+                    <button class="clear-history">Clear History</button>
+                </div>
+            </section>
+
+            <!-- Graphing Calculator -->
+            <section class="calculator-panel" id="graphing-calculator">
+                <div class="graphing-layout">
+                    <div class="graph-area">
+                        <canvas id="graph-canvas" width="400" height="400"></canvas>
+                        <div class="graph-controls">
+                            <button class="graph-btn" id="zoom-in">Zoom In</button>
+                            <button class="graph-btn" id="zoom-out">Zoom Out</button>
+                            <button class="graph-btn" id="zoom-fit">Zoom Fit</button>
+                            <button class="graph-btn" id="trace-btn">Trace</button>
+                        </div>
+                        <div class="coordinate-display">
+                            <span id="cursor-coords">X: 0, Y: 0</span>
+                        </div>
+                    </div>
+                    <div class="graphing-panel">
+                        <div class="function-entry">
+                            <h3>Functions</h3>
+                            <div class="function-inputs">
+                                <div class="function-row">
+                                    <label>Y1=</label>
+                                    <input type="text" class="function-input" id="y1" placeholder="Enter function">
+                                    <button class="function-color" style="background-color: #ff0000;"></button>
+                                </div>
+                                <div class="function-row">
+                                    <label>Y2=</label>
+                                    <input type="text" class="function-input" id="y2" placeholder="Enter function">
+                                    <button class="function-color" style="background-color: #00ff00;"></button>
+                                </div>
+                                <div class="function-row">
+                                    <label>Y3=</label>
+                                    <input type="text" class="function-input" id="y3" placeholder="Enter function">
+                                    <button class="function-color" style="background-color: #0000ff;"></button>
+                                </div>
+                            </div>
+                            <div class="function-modes">
+                                <button class="mode-btn active" data-mode="function">Function</button>
+                                <button class="mode-btn" data-mode="parametric">Parametric</button>
+                                <button class="mode-btn" data-mode="polar">Polar</button>
+                            </div>
+                        </div>
+                        <div class="ti84-keypad">
+                            <div class="keypad-grid">
+                                <!-- TI-84 style buttons will be added here -->
+                                <button class="ti-btn">Y=</button>
+                                <button class="ti-btn">WINDOW</button>
+                                <button class="ti-btn">ZOOM</button>
+                                <button class="ti-btn">TRACE</button>
+                                <button class="ti-btn">GRAPH</button>
+                            </div>
+                        </div>
+                        <div class="table-view">
+                            <h3>Table</h3>
+                            <div class="table-container">
+                                <table class="function-table">
+                                    <thead>
+                                        <tr>
+                                            <th>X</th>
+                                            <th>Y1</th>
+                                            <th>Y2</th>
+                                            <th>Y3</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile toggle bar -->
+                <div class="mobile-toggle-bar">
+                    <button class="mobile-toggle active" data-view="graph">Graph</button>
+                    <button class="mobile-toggle" data-view="keys">Keys</button>
+                </div>
+            </section>
+
+            <!-- Conversion Calculator -->
+            <section class="calculator-panel" id="conversion-calculator">
+                <div class="conversion-layout">
+                    <div class="conversion-category">
+                        <h3>Conversion Type</h3>
+                        <select class="conversion-select" id="conversion-type">
+                            <option value="length">Length</option>
+                            <option value="weight">Weight</option>
+                            <option value="temperature">Temperature</option>
+                            <option value="volume">Volume</option>
+                            <option value="area">Area</option>
+                            <option value="time">Time</option>
+                            <option value="currency">Currency</option>
+                        </select>
+                    </div>
+                    <div class="conversion-inputs">
+                        <div class="input-group">
+                            <label>From:</label>
+                            <select class="unit-select" id="from-unit">
+                                <!-- Length units (default) -->
+                                <option value="meter">Meter</option>
+                                <option value="kilometer">Kilometer</option>
+                                <option value="centimeter">Centimeter</option>
+                                <option value="millimeter">Millimeter</option>
+                                <option value="inch">Inch</option>
+                                <option value="foot">Foot</option>
+                                <option value="yard">Yard</option>
+                                <option value="mile">Mile</option>
+                            </select>
+                            <input type="number" class="conversion-value" id="from-value" placeholder="Enter value">
+                        </div>
+                        <div class="conversion-arrow">⟷</div>
+                        <div class="input-group">
+                            <label>To:</label>
+                            <select class="unit-select" id="to-unit">
+                                <!-- Length units (default) -->
+                                <option value="meter">Meter</option>
+                                <option value="kilometer" selected>Kilometer</option>
+                                <option value="centimeter">Centimeter</option>
+                                <option value="millimeter">Millimeter</option>
+                                <option value="inch">Inch</option>
+                                <option value="foot">Foot</option>
+                                <option value="yard">Yard</option>
+                                <option value="mile">Mile</option>
+                            </select>
+                            <input type="number" class="conversion-value" id="to-value" placeholder="Result">
+                        </div>
+                    </div>
+                    <div class="conversion-result">
+                        <div class="result-display">
+                            <span id="conversion-formula"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-history">
+                    <h3>History</h3>
+                    <div class="history-list"></div>
+                    <button class="clear-history">Clear History</button>
+                </div>
+            </section>
+
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- Debugging script for conversion calculator -->
+    <script>
+        // Add debugging to help troubleshoot conversion calculator issues
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('HTML: DOM Content Loaded');
+            
+            // Check if conversion elements exist
+            const conversionType = document.getElementById('conversion-type');
+            const fromUnit = document.getElementById('from-unit');
+            const toUnit = document.getElementById('to-unit');
+            const fromValue = document.getElementById('from-value');
+            const toValue = document.getElementById('to-value');
+            
+            console.log('HTML: Conversion elements check:');
+            console.log('- conversion-type:', conversionType ? 'found' : 'NOT FOUND');
+            console.log('- from-unit:', fromUnit ? 'found' : 'NOT FOUND');
+            console.log('- to-unit:', toUnit ? 'found' : 'NOT FOUND');
+            console.log('- from-value:', fromValue ? 'found' : 'NOT FOUND');
+            console.log('- to-value:', toValue ? 'found' : 'NOT FOUND');
+            
+            if (conversionType) {
+                console.log('HTML: Conversion type options:', conversionType.options.length);
+                for (let i = 0; i < conversionType.options.length; i++) {
+                    console.log(`HTML: Option ${i}: ${conversionType.options[i].value} - ${conversionType.options[i].text}`);
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
